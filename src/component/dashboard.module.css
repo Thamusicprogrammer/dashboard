@@ -1,0 +1,289 @@
+/* Scoped universal selector for the dashboard */
+.dashboardWrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboardWrapper {
+    display: flex;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  .nav {
+    width: 250px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  
+  .nav h1 {
+    text-align: center;
+    color: #1c1c93;
+    margin-bottom: 30px;
+  }
+  
+  .listGroup {
+    margin-bottom: 40px;
+  }
+  
+  .listGroup span {
+    display: block;
+    font-weight: bold;
+    color: #1c1c93;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .listGroup a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background 0.3s;
+  }
+  
+  .listGroup a.active {
+    background-color: #1c1c93;
+    color: white;
+  }
+  
+  .listGroup a:hover {
+    background-color: #1c1c93;
+    color: white;
+  }
+  
+  .listGroup a i {
+    margin-right: 10px;
+    /* Add general icon styling */
+    color: #007bff; /* Example: Customize icon color */
+  }
+  
+  .listGroup a svg {
+    margin-right: 5px; /* Add this */
+  }
+  /* Dropdown styles */
+  .navItemWithDropdown {
+    position: relative;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 100%;
+  }
+  
+  .dropdownItem {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: background 0.3s;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #1c1c93;
+    color: white;
+  }
+  
+  .dropdownItem svg {
+    margin-right: 8px;
+    /* Add general icon styling */
+    color: #007bff; /* Example: Customize icon color */
+  }
+  
+  .dropdownIcon {
+    margin-left: 5px;
+    transition: transform 0.2s;
+  }
+  
+  .navItemWithDropdown.active .dropdownIcon {
+    transform: rotate(180deg);
+  }
+  
+  .navLink:hover {
+    background-color: #1c1c93;
+    color: white;
+  }
+  
+  .badge {
+    margin-left: auto;
+    background-color: #d9534f;
+    color: white;
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+  
+  .main {
+    flex: 1;
+    background-color: #1c1c93;
+    padding: 20px;
+    color: white;
+  }
+  
+  .stats,
+  .sections {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .cards {
+    width: 250px;
+    gap: 8px;
+    height: 154px;
+    background: black;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* Add this */
+    flex-direction: column; /* Add this */
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-right: 25px;
+  }
+  
+  .cards h3 {
+    z-index: 1;
+    color: black;
+    font-size: 2em;
+  }
+  
+  .cards span {
+    z-index: 1;
+    color: #1c1c93;
+    font-size: 0.9rem;
+    margin-top: 6px; /* Add this */
+  }
+  
+  .cards::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+  }
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .cards::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+    flex: 1;
+    transition: transform 0.2s ease-in-out;
+    border: 3px solid transparent; /* This is KEY for the border effect */
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px 0;
+    margin-top: 20px;
+    background: #f1f1f1;
+    border-radius: 8px;
+  }
+  
+  .calendarDay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 0.9rem;
+    color: #333;
+    border-radius: 4px;
+  }
+  
+  .calendarDay:hover {
+    background: #1c1c93;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .today {
+    background: #1c1c93;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn i {
+    margin: 0;
+  }
